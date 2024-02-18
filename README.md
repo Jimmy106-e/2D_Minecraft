@@ -1,1 +1,1 @@
-Making Minecraft 2D n Godot 4.2
+Making Minecraft 2D in Godot 4.2
