@@ -1,0 +1,197 @@
+[gd_scene load_steps=8 format=3 uid="uid://u1pymtawdw01"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gkk2y"]
+[ext_resource type="Texture2D" uid="uid://2s2fh11fmv0j" path="res://Sprites/steve.png" id="2_glb85"]
+[ext_resource type="Script" path="res://Scripts/Head.gd" id="3_h7hk8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai7ve"]
+size = Vector2(20, 120)
+
+[sub_resource type="Animation" id="Animation_t2xsv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Left_Arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Right_Arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Left_Leg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Right_Leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5edbt"]
+resource_name = "Walking"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Left_Arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 0.8, 0.8, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.0, 0.261799, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Right_Arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 0.8, 0.8, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, -0.261799, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Left_Leg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 0.8, 0.8, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, -0.261799, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Right_Leg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 0.8, 0.8, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.0, 0.261799, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xjpeb"]
+_data = {
+"RESET": SubResource("Animation_t2xsv"),
+"Walking": SubResource("Animation_5edbt")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("Anims")]
+script = ExtResource("1_gkk2y")
+Anims = NodePath("AnimationPlayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 100)
+shape = SubResource("RectangleShape2D_ai7ve")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Head" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(20, 40)
+scale = Vector2(5, 5)
+texture = ExtResource("2_glb85")
+offset = Vector2(0, -4)
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 8)
+script = ExtResource("3_h7hk8")
+
+[node name="RayCast2D" type="RayCast2D" parent="Body/Head"]
+position = Vector2(4, -4)
+scale = Vector2(0.2, 0.2)
+target_position = Vector2(160, 0)
+
+[node name="Torso" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(20, 70)
+scale = Vector2(5, 5)
+texture = ExtResource("2_glb85")
+region_enabled = true
+region_rect = Rect2(16, 20, 4, 12)
+
+[node name="Left_Arm" type="Sprite2D" parent="Body"]
+z_index = -1
+texture_filter = 1
+position = Vector2(20, 50)
+scale = Vector2(5, 5)
+texture = ExtResource("2_glb85")
+offset = Vector2(0, 4)
+region_enabled = true
+region_rect = Rect2(40, 20, 4, 12)
+
+[node name="Right_Arm" type="Sprite2D" parent="Body"]
+z_index = 1
+texture_filter = 1
+position = Vector2(20, 50)
+scale = Vector2(5, 5)
+texture = ExtResource("2_glb85")
+offset = Vector2(0, 4)
+region_enabled = true
+region_rect = Rect2(40, 52, 4, 12)
+
+[node name="Left_Leg" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(20, 100)
+scale = Vector2(5, 5)
+texture = ExtResource("2_glb85")
+offset = Vector2(0, 6)
+region_enabled = true
+region_rect = Rect2(16, 52, 4, 12)
+
+[node name="Right_Leg" type="Sprite2D" parent="Body"]
+z_index = 1
+texture_filter = 1
+position = Vector2(20, 100)
+scale = Vector2(5, 5)
+texture = ExtResource("2_glb85")
+offset = Vector2(0, 6)
+region_enabled = true
+region_rect = Rect2(24, 52, 4, 12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xjpeb")
+}
