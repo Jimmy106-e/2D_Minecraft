@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://bvt3vy2hg6r0j"]
+
+[ext_resource type="Script" path="res://Scripts/Gui/InvItem.gd" id="1_7fjs2"]
+[ext_resource type="Texture2D" uid="uid://cpsqkj1vwlwa6" path="res://Sprites/Items.png" id="2_e8y6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw5s0"]
+atlas = ExtResource("2_e8y6t")
+region = Rect2(432, 64, 16, 16)
+
+[resource]
+script = ExtResource("1_7fjs2")
+name = "Wooden Pickaxe"
+texture = SubResource("AtlasTexture_bw5s0")

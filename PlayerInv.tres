@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://cmsha6kvcgd8j"]
+
+[ext_resource type="Resource" uid="uid://bvt3vy2hg6r0j" path="res://Items/Wooden Pickaxe.tres" id="1_umu28"]
+[ext_resource type="Script" path="res://Scripts/Gui/Inventory.gd" id="2_k5vay"]
+
+[resource]
+script = ExtResource("2_k5vay")
+Items = Array[Resource("res://Scripts/Gui/InvItem.gd")]([null, null, ExtResource("1_umu28"), null, ExtResource("1_umu28"), null, null, ExtResource("1_umu28"), null])
