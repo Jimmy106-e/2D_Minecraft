@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb0igojqclfg1"]
+
+[ext_resource type="Script" path="res://Scripts/Inv_Slot.gd" id="1_fq607"]
+[ext_resource type="Texture2D" uid="uid://c50u8d3r5p477" path="res://Sprites/Gui.png" id="1_rm01w"]
+[ext_resource type="FontFile" uid="uid://bcd7vqbaqtthi" path="res://Minecraft.ttf" id="3_4lhc0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8inl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kld67"]
+font = ExtResource("3_4lhc0")
+shadow_size = 0
+shadow_color = Color(0.333333, 0.333333, 0.333333, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="hotbar_slot" type="Panel"]
+custom_minimum_size = Vector2(20, 20)
+theme_override_styles/panel = SubResource("StyleBoxFlat_e8inl")
+script = ExtResource("1_fq607")
+not_hotbar = true
+
+[node name="hot_slot" type="Sprite2D" parent="." groups=["hotbar"]]
+texture_filter = 1
+texture = ExtResource("1_rm01w")
+centered = false
+region_enabled = true
+region_rect = Rect2(102, 24, 20, 20)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 19.0
+offset_bottom = 19.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
+texture_filter = 1
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 28.0
+offset_bottom = 30.0
+scale = Vector2(0.5, 0.5)
+text = "64"
+label_settings = SubResource("LabelSettings_kld67")

@@ -45,4 +45,9 @@ func _physics_process(delta):
 			var cell_Block = tilemap.local_to_map(tilemap.to_local(raycast.get_collision_point()))
 			if Input.is_action_just_pressed("Mine"):
 				tilemap.set_cell(0,cell_Block)
+	
+	if $Camera2D/CanvasLayer/Inventory.is_open == true:
+		raycast.enabled = false
+	else:
+		raycast.enabled = true
 

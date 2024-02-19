@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://cowg62fcq8w4j"]
+
+[ext_resource type="Script" path="res://Scripts/hotbar.gd" id="1_kevfp"]
+[ext_resource type="Texture2D" uid="uid://c50u8d3r5p477" path="res://Sprites/Gui.png" id="1_lrwnp"]
+[ext_resource type="PackedScene" uid="uid://bb0igojqclfg1" path="res://Scenes/hotbar_slot.tscn" id="3_6n7rc"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kevfp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 575)
+scale = Vector2(3, 3)
+texture = ExtResource("1_lrwnp")
+region_enabled = true
+region_rect = Rect2(0, 0, 182, 22)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -11.0
+offset_right = -91.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+region_rect = Rect2(1, 0, 181, 21)
+
+[node name="GridContainer" type="GridContainer" parent="Sprite2D/NinePatchRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 181.0
+offset_bottom = 21.0
+theme_override_constants/h_separation = 0
+columns = 9
+
+[node name="hotbar_slot1" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2
+
+[node name="hotbar_slot2" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2
+
+[node name="hotbar_slot3" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2
+
+[node name="hotbar_slot4" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2
+
+[node name="hotbar_slot5" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2
+
+[node name="hotbar_slot6" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2
+
+[node name="hotbar_slot7" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2
+
+[node name="hotbar_slot8" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2
+
+[node name="hotbar_slot9" parent="Sprite2D/NinePatchRect/GridContainer" instance=ExtResource("3_6n7rc")]
+layout_mode = 2

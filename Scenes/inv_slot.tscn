@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://gpbssoxsyh42"]
+
+[ext_resource type="Script" path="res://Scripts/Inv_Slot.gd" id="1_bshjy"]
+[ext_resource type="Texture2D" uid="uid://cvxqoqfaw2dd2" path="res://Sprites/Inventory.png" id="2_0shac"]
+[ext_resource type="FontFile" uid="uid://bcd7vqbaqtthi" path="res://Minecraft.ttf" id="3_uucwq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7kxe"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4cf3o"]
+font = ExtResource("3_uucwq")
+shadow_size = 0
+shadow_color = Color(0.333333, 0.333333, 0.333333, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="Inv_Slot" type="Panel"]
+custom_minimum_size = Vector2(18, 18)
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m7kxe")
+script = ExtResource("1_bshjy")
+
+[node name="InvSlot" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_0shac")
+centered = false
+region_enabled = true
+region_rect = Rect2(7, 83, 18, 18)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 28.0
+offset_bottom = 30.0
+scale = Vector2(0.5, 0.5)
+text = "64"
+label_settings = SubResource("LabelSettings_4cf3o")
+horizontal_alignment = 2

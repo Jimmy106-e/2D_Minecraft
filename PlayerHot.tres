@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=7 format=3 uid="uid://hr3wi6427l84"]
+
+[ext_resource type="Resource" uid="uid://bvt3vy2hg6r0j" path="res://Items/Wooden Pickaxe.tres" id="1_5ktar"]
+[ext_resource type="Script" path="res://Scripts/Gui/InvItem.gd" id="1_bx3sa"]
+[ext_resource type="Script" path="res://Scripts/Gui/InvSystem.gd" id="1_j2af0"]
+[ext_resource type="Texture2D" uid="uid://cpsqkj1vwlwa6" path="res://Sprites/Items.png" id="2_y8nq5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuair"]
+atlas = ExtResource("2_y8nq5")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="Resource" id="Resource_wqiq4"]
+script = ExtResource("1_bx3sa")
+name = "Diamond_Sword"
+texture = SubResource("AtlasTexture_nuair")
+amount = 3
+
+[resource]
+script = ExtResource("1_j2af0")
+Items = Array[ExtResource("1_bx3sa")]([SubResource("Resource_wqiq4"), null, null, null, ExtResource("1_5ktar"), null, null, ExtResource("1_5ktar"), null])

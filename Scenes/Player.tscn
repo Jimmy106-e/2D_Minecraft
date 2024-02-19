@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://u1pymtawdw01"]
+[gd_scene load_steps=10 format=3 uid="uid://u1pymtawdw01"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gkk2y"]
 [ext_resource type="Texture2D" uid="uid://2s2fh11fmv0j" path="res://Sprites/steve.png" id="2_glb85"]
+[ext_resource type="PackedScene" uid="uid://cowg62fcq8w4j" path="res://Scenes/hotbar.tscn" id="3_3jwtg"]
 [ext_resource type="Script" path="res://Scripts/Head.gd" id="3_h7hk8"]
+[ext_resource type="PackedScene" uid="uid://d15csfxar6kx4" path="res://Scenes/inventory.tscn" id="4_0wxxm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai7ve"]
 size = Vector2(20, 120)
@@ -116,9 +118,10 @@ _data = {
 "Walking": SubResource("Animation_5edbt")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("Anims")]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("Anims", "raycast")]
 script = ExtResource("1_gkk2y")
 Anims = NodePath("AnimationPlayer")
+raycast = NodePath("Body/Head/RayCast2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, 100)
@@ -126,6 +129,12 @@ shape = SubResource("RectangleShape2D_ai7ve")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Inventory" parent="Camera2D/CanvasLayer" instance=ExtResource("4_0wxxm")]
+
+[node name="Hotbar" parent="Camera2D/CanvasLayer" instance=ExtResource("3_3jwtg")]
 
 [node name="Body" type="Node2D" parent="."]
 

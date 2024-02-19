@@ -5,9 +5,10 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw5s0"]
 atlas = ExtResource("2_e8y6t")
-region = Rect2(432, 64, 16, 16)
+region = Rect2(432, 64, 17, 17)
 
 [resource]
 script = ExtResource("1_7fjs2")
 name = "Wooden Pickaxe"
 texture = SubResource("AtlasTexture_bw5s0")
+amount = 0

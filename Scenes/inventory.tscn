@@ -1,17 +1,205 @@
-[gd_scene load_steps=2 format=3 uid="uid://d15csfxar6kx4"]
+[gd_scene load_steps=6 format=3 uid="uid://d15csfxar6kx4"]
 
-[ext_resource type="Texture2D" uid="uid://c50u8d3r5p477" path="res://Sprites/Gui.png" id="1_h5n0u"]
+[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_2o4kx"]
+[ext_resource type="Texture2D" uid="uid://cvxqoqfaw2dd2" path="res://Sprites/Inventory.png" id="2_ncblw"]
+[ext_resource type="Texture2D" uid="uid://2s2fh11fmv0j" path="res://Sprites/steve.png" id="3_1jyfl"]
+[ext_resource type="PackedScene" uid="uid://gpbssoxsyh42" path="res://Scenes/inv_slot.tscn" id="3_mu62f"]
+[ext_resource type="Script" path="res://Scripts/Head.gd" id="4_45b8c"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 182.0
-offset_bottom = 22.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2o4kx")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 4
 texture_filter = 1
-layout_mode = 0
-offset_right = 182.0
-offset_bottom = 22.0
-texture = ExtResource("1_h5n0u")
-region_rect = Rect2(0, 0, 182, 22)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -172.0
+offset_right = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_ncblw")
+region_rect = Rect2(0, 0, 176, 166)
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_right = 81.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 9
+
+[node name="Inv_Slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot20" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot21" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot22" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot23" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot24" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot25" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot26" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot27" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+z_index = 3
+texture_filter = 1
+position = Vector2(577, 323)
+scale = Vector2(1.779, 1)
+texture = ExtResource("2_ncblw")
+region_enabled = true
+region_rect = Rect2(40, 66, 9, 9)
+
+[node name="Body" type="Node2D" parent="."]
+z_index = 5
+texture_filter = 1
+position = Vector2(488, 196)
+scale = Vector2(0.7, 0.7)
+
+[node name="Head" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(20, 40)
+scale = Vector2(5, 5)
+texture = ExtResource("3_1jyfl")
+offset = Vector2(0, -4)
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 8)
+script = ExtResource("4_45b8c")
+
+[node name="Torso" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(20, 70)
+scale = Vector2(5, 5)
+texture = ExtResource("3_1jyfl")
+region_enabled = true
+region_rect = Rect2(16, 20, 4, 12)
+
+[node name="Left_Arm" type="Sprite2D" parent="Body"]
+z_index = -1
+texture_filter = 1
+position = Vector2(20, 50)
+scale = Vector2(5, 5)
+texture = ExtResource("3_1jyfl")
+offset = Vector2(0, 4)
+region_enabled = true
+region_rect = Rect2(40, 20, 4, 12)
+
+[node name="Right_Arm" type="Sprite2D" parent="Body"]
+z_index = 1
+texture_filter = 1
+position = Vector2(20, 50)
+scale = Vector2(5, 5)
+texture = ExtResource("3_1jyfl")
+offset = Vector2(0, 4)
+region_enabled = true
+region_rect = Rect2(40, 52, 4, 12)
+
+[node name="Left_Leg" type="Sprite2D" parent="Body"]
+texture_filter = 1
+position = Vector2(20, 100)
+scale = Vector2(5, 5)
+texture = ExtResource("3_1jyfl")
+offset = Vector2(0, 6)
+region_enabled = true
+region_rect = Rect2(16, 52, 4, 12)
+
+[node name="Right_Leg" type="Sprite2D" parent="Body"]
+z_index = 1
+texture_filter = 1
+position = Vector2(20, 100)
+scale = Vector2(5, 5)
+texture = ExtResource("3_1jyfl")
+offset = Vector2(0, 6)
+region_enabled = true
+region_rect = Rect2(24, 52, 4, 12)

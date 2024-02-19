@@ -1028,8 +1028,7 @@ sources/1 = SubResource("TileSetAtlasSource_bs1rl")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." node_paths=PackedStringArray("raycast") instance=ExtResource("1_bbofx")]
-raycast = NodePath("Body/Head/RayCast2D")
+[node name="Player" parent="." instance=ExtResource("1_bbofx")]
 
 [node name="Head" parent="Player/Body" index="0" node_paths=PackedStringArray("raycast", "tilemap")]
 raycast = NodePath("RayCast2D")

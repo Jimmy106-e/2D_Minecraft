@@ -1,8 +1,20 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://cmsha6kvcgd8j"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=7 format=3 uid="uid://cmsha6kvcgd8j"]
 
+[ext_resource type="Script" path="res://Scripts/Gui/InvItem.gd" id="1_qx3il"]
 [ext_resource type="Resource" uid="uid://bvt3vy2hg6r0j" path="res://Items/Wooden Pickaxe.tres" id="1_umu28"]
-[ext_resource type="Script" path="res://Scripts/Gui/Inventory.gd" id="2_k5vay"]
+[ext_resource type="Script" path="res://Scripts/Gui/InvSystem.gd" id="2_bxuj4"]
+[ext_resource type="Texture2D" uid="uid://cpsqkj1vwlwa6" path="res://Sprites/Items.png" id="2_tsdog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuair"]
+atlas = ExtResource("2_tsdog")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="Resource" id="Resource_uj3j3"]
+script = ExtResource("1_qx3il")
+name = "Diamond_Sword"
+texture = SubResource("AtlasTexture_nuair")
+amount = 3
 
 [resource]
-script = ExtResource("2_k5vay")
-Items = Array[Resource("res://Scripts/Gui/InvItem.gd")]([null, null, ExtResource("1_umu28"), null, ExtResource("1_umu28"), null, null, ExtResource("1_umu28"), null])
+script = ExtResource("2_bxuj4")
+Items = Array[ExtResource("1_qx3il")]([null, null, SubResource("Resource_uj3j3"), null, ExtResource("1_umu28"), null, null, ExtResource("1_umu28"), null, null, null, null, ExtResource("1_umu28"), null, null, ExtResource("1_umu28"), null, null, null, ExtResource("1_umu28"), ExtResource("1_umu28"), null, null, ExtResource("1_umu28"), null, null, null])
