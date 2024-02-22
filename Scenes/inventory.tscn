@@ -34,7 +34,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_ncblw")
 region_rect = Rect2(0, 0, 176, 166)
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="Inventory" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,85 +50,129 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 9
 
-[node name="Inv_Slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot1" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot2" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot3" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot4" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot5" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot6" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot7" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot8" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot9" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot10" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot11" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot12" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot13" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot14" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot15" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot16" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot17" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot18" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot19" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot20" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot20" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot21" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot21" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot22" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot22" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot23" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot23" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot24" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot24" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot25" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot25" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot26" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot26" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
-[node name="Inv_Slot27" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mu62f")]
+[node name="Inv_Slot27" parent="NinePatchRect/Inventory" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Hotbar" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = 57.5
+offset_right = 81.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 9
+
+[node name="Inv_Slot1" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot2" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot3" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot4" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot5" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot6" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot7" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot8" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
+layout_mode = 2
+
+[node name="Inv_Slot9" parent="NinePatchRect/Hotbar" instance=ExtResource("3_mu62f")]
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

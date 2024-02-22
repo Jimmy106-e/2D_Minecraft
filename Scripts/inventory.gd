@@ -1,7 +1,9 @@
 extends Control
 
-@onready var inventory : Inventory = preload("res://PlayerInv.tres")
-@onready var slots = $NinePatchRect/GridContainer.get_children()
+@onready var inventory_inv : Inventory = preload("res://PlayerInv.tres")
+@onready var inventory_hot : Inventory = preload("res://PlayerHot.tres")
+@onready var slots_inv = $NinePatchRect/Inventory.get_children()
+@onready var slots_hot = $NinePatchRect/Hotbar.get_children()
 
 var is_open = false
 
@@ -10,8 +12,10 @@ func _ready():
 	close()
 
 func update_slots():
-	for i in range(min(inventory.Items.size(), slots.size())):
-		slots[i].update(inventory.Items[i])
+	for i in range(min(inventory_inv.Items.size(), slots_inv.size())):
+		slots_inv[i].update(inventory_inv.Items[i])
+	for i in range(min(inventory_hot.Items.size(), slots_hot.size())):
+		slots_hot[i].update(inventory_hot.Items[i])
 
 func _process(delta):
 	if Input.is_action_just_pressed("E"):

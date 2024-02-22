@@ -41,8 +41,8 @@ layout_mode = 2
 texture_filter = 1
 
 [node name="Label" type="Label" parent="."]
-visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 11.0
 offset_right = 28.0

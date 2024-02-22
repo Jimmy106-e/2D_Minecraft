@@ -14,6 +14,7 @@ script = ExtResource("1_bx3sa")
 name = "Diamond_Sword"
 texture = SubResource("AtlasTexture_nuair")
 amount = 3
+stackable = false
 
 [resource]
 script = ExtResource("1_j2af0")

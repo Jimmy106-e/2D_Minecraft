@@ -151,7 +151,9 @@ script = ExtResource("3_h7hk8")
 [node name="RayCast2D" type="RayCast2D" parent="Body/Head"]
 position = Vector2(4, -4)
 scale = Vector2(0.2, 0.2)
-target_position = Vector2(160, 0)
+target_position = Vector2(120, 0)
+hit_from_inside = true
+collide_with_areas = true
 
 [node name="Torso" type="Sprite2D" parent="Body"]
 texture_filter = 1

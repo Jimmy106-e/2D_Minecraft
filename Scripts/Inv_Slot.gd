@@ -16,8 +16,11 @@ func update(Item: InvItem):
 		if not_hotbar:
 			pass
 		else:
-			if Item.amount > 1:
-				stack_I.visible = true
-				stack_I.set_text(str(Item.amount))
+			if Item.stackable:
+				if Item.amount > 1:
+					stack_I.visible = true
+					stack_I.set_text(str(Item.amount))
+				else:
+					stack_I.visible = false
 			else:
 				stack_I.visible = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://curpp2pnqemcw"]
+[gd_scene load_steps=6 format=3 uid="uid://curpp2pnqemcw"]
 
 [ext_resource type="PackedScene" uid="uid://u1pymtawdw01" path="res://Scenes/Player.tscn" id="1_bbofx"]
 [ext_resource type="Texture2D" uid="uid://dd2dyjftfxdxu" path="res://Sprites/Blocks.png" id="2_alwwg"]
+[ext_resource type="Script" path="res://Scripts/TileMap.gd" id="3_yf1rl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bs1rl"]
 texture = ExtResource("2_alwwg")
@@ -1024,15 +1025,13 @@ texture = ExtResource("2_alwwg")
 
 [sub_resource type="TileSet" id="TileSet_6qpgx"]
 physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Time"
+custom_data_layer_0/type = 2
 sources/1 = SubResource("TileSetAtlasSource_bs1rl")
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_bbofx")]
-
-[node name="Head" parent="Player/Body" index="0" node_paths=PackedStringArray("raycast", "tilemap")]
-raycast = NodePath("RayCast2D")
-tilemap = NodePath("")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemaps"]]
 texture_filter = 1
@@ -1040,5 +1039,6 @@ scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_6qpgx")
 format = 2
 layer_0/tile_data = PackedInt32Array(393216, 196609, 0, 393217, 196609, 0, 393218, 196609, 0, 393219, 196609, 0, 393220, 196609, 0, 393221, 196609, 0, 393222, 196609, 0, 393223, 196609, 0, 393224, 196609, 0, 327689, 196609, 0, 327690, 196609, 0, 327691, 196609, 0, 262156, 196609, 0, 327693, 196609, 0, 327694, 196609, 0, 458752, 131073, 0, 458753, 131073, 0, 458754, 131073, 0, 458755, 131073, 0, 458756, 131073, 0, 458757, 131073, 0, 458758, 131073, 0, 458759, 131073, 0, 458760, 131073, 0, 458761, 131073, 0, 393225, 131073, 0, 393226, 131073, 0, 393227, 131073, 0, 327692, 131073, 0, 393229, 131073, 0, 393230, 131073, 0, 393228, 131073, 0, 458762, 65537, 0, 458763, 65537, 0, 458764, 65537, 0, 458765, 65537, 0, 458766, 65537, 0, 327685, 786433, 1, 327686, 851969, 1, 327683, 393217, 9, 327684, 458753, 9)
+script = ExtResource("3_yf1rl")
 
 [editable path="Player"]

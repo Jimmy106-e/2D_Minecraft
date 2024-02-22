@@ -41,10 +41,14 @@ func _physics_process(delta):
 		if collider is TileMap:
 			var tilemaps = get_tree().get_nodes_in_group("Tilemaps")
 			var tilemap = tilemaps[0]
-			print(tilemap.local_to_map(tilemap.to_local(raycast.get_collision_point())))
+			print(tilemap.local_to_map(tilemap.to_local(raycast.get_collision_point())), tilemap.get_cell_atlas_coords(0,tilemap.local_to_map(tilemap.to_local(raycast.get_collision_point()))))
 			var cell_Block = tilemap.local_to_map(tilemap.to_local(raycast.get_collision_point()))
 			if Input.is_action_just_pressed("Mine"):
-				tilemap.set_cell(0,cell_Block)
+				if tilemap.get_cell_atlas_coords(0,cell_Block) == Vector2i(1,1):
+					pass
+				else:
+					print_debug("Mined")
+					tilemap.set_cell(0,cell_Block,-1,Vector2i(-1,-1))
 	
 	if $Camera2D/CanvasLayer/Inventory.is_open == true:
 		raycast.enabled = false
