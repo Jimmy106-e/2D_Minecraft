@@ -1,13 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://u1pymtawdw01"]
+[gd_scene load_steps=13 format=3 uid="uid://u1pymtawdw01"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_gkk2y"]
 [ext_resource type="Texture2D" uid="uid://2s2fh11fmv0j" path="res://Sprites/steve.png" id="2_glb85"]
 [ext_resource type="PackedScene" uid="uid://cowg62fcq8w4j" path="res://Scenes/hotbar.tscn" id="3_3jwtg"]
 [ext_resource type="Script" path="res://Scripts/Head.gd" id="3_h7hk8"]
 [ext_resource type="PackedScene" uid="uid://d15csfxar6kx4" path="res://Scenes/inventory.tscn" id="4_0wxxm"]
+[ext_resource type="Shader" path="res://Shaders/Outline_invert.gdshader" id="6_28le2"]
+[ext_resource type="Texture2D" uid="uid://djfywckhrpmy" path="res://Sprites/Outline.png" id="7_mpbid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai7ve"]
 size = Vector2(20, 120)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kke2k"]
+shader = ExtResource("6_28le2")
 
 [sub_resource type="Animation" id="Animation_t2xsv"]
 length = 0.001
@@ -118,10 +123,11 @@ _data = {
 "Walking": SubResource("Animation_5edbt")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("Anims", "raycast")]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("Anims", "raycast", "block_outline")]
 script = ExtResource("1_gkk2y")
 Anims = NodePath("AnimationPlayer")
 raycast = NodePath("Body/Head/RayCast2D")
+block_outline = NodePath("Body/Outline")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, 100)
@@ -138,7 +144,7 @@ position_smoothing_enabled = true
 
 [node name="Body" type="Node2D" parent="."]
 
-[node name="Head" type="Sprite2D" parent="Body"]
+[node name="Head" type="Sprite2D" parent="Body" node_paths=PackedStringArray("raycast")]
 texture_filter = 1
 position = Vector2(20, 40)
 scale = Vector2(5, 5)
@@ -147,9 +153,10 @@ offset = Vector2(0, -4)
 region_enabled = true
 region_rect = Rect2(0, 8, 8, 8)
 script = ExtResource("3_h7hk8")
+raycast = NodePath("RayCast2D")
 
 [node name="RayCast2D" type="RayCast2D" parent="Body/Head"]
-position = Vector2(4, -4)
+position = Vector2(4.00001, -4)
 scale = Vector2(0.2, 0.2)
 target_position = Vector2(120, 0)
 hit_from_inside = true
@@ -201,6 +208,15 @@ texture = ExtResource("2_glb85")
 offset = Vector2(0, 6)
 region_enabled = true
 region_rect = Rect2(24, 52, 4, 12)
+
+[node name="Outline" type="Sprite2D" parent="Body"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+texture_filter = 1
+material = SubResource("ShaderMaterial_kke2k")
+position = Vector2(40, 20)
+scale = Vector2(5, 5)
+texture = ExtResource("7_mpbid")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -9,6 +9,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var Anims : AnimationPlayer
 @export var raycast : RayCast2D
+@export var block_outline : Sprite2D
+
+func _ready():
+	block_outline.visible = false
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -43,12 +47,16 @@ func _physics_process(delta):
 			var tilemap = tilemaps[0]
 			print(tilemap.local_to_map(tilemap.to_local(raycast.get_collision_point())), tilemap.get_cell_atlas_coords(0,tilemap.local_to_map(tilemap.to_local(raycast.get_collision_point()))))
 			var cell_Block = tilemap.local_to_map(tilemap.to_local(raycast.get_collision_point()))
+			block_outline.position = cell_Block.map_to_local()
+			block_outline.visible = true
 			if Input.is_action_just_pressed("Mine"):
 				if tilemap.get_cell_atlas_coords(0,cell_Block) == Vector2i(1,1):
 					pass
 				else:
 					print_debug("Mined")
 					tilemap.set_cell(0,cell_Block,-1,Vector2i(-1,-1))
+		else:
+			block_outline.visible = false 
 	
 	if $Camera2D/CanvasLayer/Inventory.is_open == true:
 		raycast.enabled = false

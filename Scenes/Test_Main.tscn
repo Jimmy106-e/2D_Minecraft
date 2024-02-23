@@ -1033,6 +1033,9 @@ sources/1 = SubResource("TileSetAtlasSource_bs1rl")
 
 [node name="Player" parent="." instance=ExtResource("1_bbofx")]
 
+[node name="Head" parent="Player/Body" index="0" node_paths=PackedStringArray("tilemap")]
+tilemap = NodePath("../../../TileMap")
+
 [node name="TileMap" type="TileMap" parent="." groups=["Tilemaps"]]
 texture_filter = 1
 scale = Vector2(5, 5)
