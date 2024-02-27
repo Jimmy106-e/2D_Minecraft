@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://curpp2pnqemcw"]
+[gd_scene load_steps=20 format=3 uid="uid://curpp2pnqemcw"]
 
 [ext_resource type="PackedScene" uid="uid://u1pymtawdw01" path="res://Scenes/Player.tscn" id="1_bbofx"]
+[ext_resource type="Script" path="res://Scripts/Test_Main.gd" id="1_t4xds"]
 [ext_resource type="Texture2D" uid="uid://dd2dyjftfxdxu" path="res://Sprites/Blocks.png" id="2_alwwg"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="3_yf1rl"]
+[ext_resource type="Shader" path="res://Shaders/Outline_invert.gdshader" id="4_4oq1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bs1rl"]
 texture = ExtResource("2_alwwg")
@@ -1029,9 +1031,105 @@ custom_data_layer_0/name = "Time"
 custom_data_layer_0/type = 2
 sources/1 = SubResource("TileSetAtlasSource_bs1rl")
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8mx4h"]
+shader = ExtResource("4_4oq1a")
 
-[node name="Player" parent="." instance=ExtResource("1_bbofx")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsf13"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(0, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp5sk"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(16, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkmsb"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(48, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yevoh"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(64, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bttrx"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(80, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulvhp"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(96, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjlsg"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(112, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2045x"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(128, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5llx"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(144, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phntd"]
+atlas = ExtResource("2_alwwg")
+region = Rect2(32, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d06b5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsf13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp5sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkmsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yevoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bttrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulvhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjlsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2045x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5llx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phntd")
+}],
+"loop": true,
+"name": &"Mining",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("block_outline", "raycast")]
+script = ExtResource("1_t4xds")
+block_outline = NodePath("Polygon2D")
+raycast = NodePath("Player/Body/Head/RayCast2D")
+
+[node name="Player" parent="." node_paths=PackedStringArray("mining_anim_player") instance=ExtResource("1_bbofx")]
+mining_anim_player = NodePath("../Polygon2D/AnimatedSprite2D")
 
 [node name="Head" parent="Player/Body" index="0" node_paths=PackedStringArray("tilemap")]
 tilemap = NodePath("../../../TileMap")
@@ -1043,5 +1141,22 @@ tile_set = SubResource("TileSet_6qpgx")
 format = 2
 layer_0/tile_data = PackedInt32Array(393216, 196609, 0, 393217, 196609, 0, 393218, 196609, 0, 393219, 196609, 0, 393220, 196609, 0, 393221, 196609, 0, 393222, 196609, 0, 393223, 196609, 0, 393224, 196609, 0, 327689, 196609, 0, 327690, 196609, 0, 327691, 196609, 0, 262156, 196609, 0, 327693, 196609, 0, 327694, 196609, 0, 458752, 131073, 0, 458753, 131073, 0, 458754, 131073, 0, 458755, 131073, 0, 458756, 131073, 0, 458757, 131073, 0, 458758, 131073, 0, 458759, 131073, 0, 458760, 131073, 0, 458761, 131073, 0, 393225, 131073, 0, 393226, 131073, 0, 393227, 131073, 0, 327692, 131073, 0, 393229, 131073, 0, 393230, 131073, 0, 393228, 131073, 0, 458762, 65537, 0, 458763, 65537, 0, 458764, 65537, 0, 458765, 65537, 0, 458766, 65537, 0, 327685, 786433, 1, 327686, 851969, 1, 327683, 393217, 9, 327684, 458753, 9)
 script = ExtResource("3_yf1rl")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_8mx4h")
+skeleton = NodePath("Skeleton2D")
+invert_enabled = true
+invert_border = 5.0
+polygon = PackedVector2Array(-35, 35, 35, 35, 35, -35, -35, -35)
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Polygon2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Polygon2D"]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_d06b5")
+animation = &"Mining"
+frame = 4
+frame_progress = 0.765622
 
 [editable path="Player"]

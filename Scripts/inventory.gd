@@ -2,8 +2,8 @@ extends Control
 
 @onready var inventory_inv : Inventory = preload("res://PlayerInv.tres")
 @onready var inventory_hot : Inventory = preload("res://PlayerHot.tres")
-@onready var slots_inv = $NinePatchRect/Inventory.get_children()
-@onready var slots_hot = $NinePatchRect/Hotbar.get_children()
+@onready var slots_inv = $Inv_Panel/NinePatchRect/Inventory.get_children()
+@onready var slots_hot = $Inv_Panel/NinePatchRect/Hotbar.get_children()
 
 var is_open = false
 
@@ -31,3 +31,7 @@ func open():
 func close():
 	visible = false
 	is_open = false
+
+func _on_inv_panel_mouse_entered():
+	if Rect2(Vector2(), size).has_point(get_local_mouse_position()):
+		print("Here!")

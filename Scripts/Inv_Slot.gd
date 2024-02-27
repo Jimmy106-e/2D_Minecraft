@@ -1,11 +1,13 @@
-extends Panel
+extends Button
 
 @onready var item : Sprite2D = $CenterContainer/Panel/Item
 @onready var stack_I = $Label
 @export var not_hotbar = false
+@onready var selec_box : Sprite2D = $selec_box
 
 func _ready():
 	stack_I.visible = false
+	selec_box.visible = false
 
 func update(Item: InvItem):
 	if !Item:
@@ -24,3 +26,13 @@ func update(Item: InvItem):
 					stack_I.visible = false
 			else:
 				stack_I.visible = false
+	return Item
+
+func selected(Bool:bool):
+	if Bool:
+		selec_box.visible = true
+		return item
+	else:
+		selec_box.visible = false
+		return
+	

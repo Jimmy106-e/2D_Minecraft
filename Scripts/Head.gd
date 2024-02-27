@@ -19,8 +19,6 @@ func _process(delta: float) -> void:
 	# Flip the sprite if the mouse is on the left side
 	if mouse_position.x < global_position.x:
 		self.scale.y = -5
-#		raycast.scale.x = -1
 	else:
 		self.scale.y = 5
-#		raycast.scale.x = 1
 		

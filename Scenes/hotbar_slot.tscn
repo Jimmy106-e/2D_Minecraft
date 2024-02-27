@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb0igojqclfg1"]
+[gd_scene load_steps=5 format=3 uid="uid://bb0igojqclfg1"]
 
 [ext_resource type="Script" path="res://Scripts/Inv_Slot.gd" id="1_fq607"]
 [ext_resource type="Texture2D" uid="uid://c50u8d3r5p477" path="res://Sprites/Gui.png" id="1_rm01w"]
 [ext_resource type="FontFile" uid="uid://bcd7vqbaqtthi" path="res://Minecraft.ttf" id="3_4lhc0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8inl"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_kld67"]
 font = ExtResource("3_4lhc0")
@@ -13,9 +10,8 @@ shadow_size = 0
 shadow_color = Color(0.333333, 0.333333, 0.333333, 1)
 shadow_offset = Vector2(2, 2)
 
-[node name="hotbar_slot" type="Panel"]
+[node name="hotbar_slot" type="Button"]
 custom_minimum_size = Vector2(20, 20)
-theme_override_styles/panel = SubResource("StyleBoxFlat_e8inl")
 script = ExtResource("1_fq607")
 not_hotbar = true
 
@@ -50,3 +46,10 @@ offset_bottom = 30.0
 scale = Vector2(0.5, 0.5)
 text = "64"
 label_settings = SubResource("LabelSettings_kld67")
+
+[node name="selec_box" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(10, 10)
+texture = ExtResource("1_rm01w")
+region_enabled = true
+region_rect = Rect2(0, 22, 24, 24)
